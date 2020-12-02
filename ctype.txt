@@ -1,0 +1,361 @@
+			PRESENTATION DE LA BIBLIOTHEQUE ctype
+
+Fonction isalnum
+
+  	 	 int isalnum( int character );
+
+Cette fonction permet de tester si un caractère est alpha-numérique ou non.
+Un caractère sera considéré comme alpha-numérique s'il est une lettre
+(minuscule ou majuscule) ou un chiffre. Rappel : les fonctions de cette
+librairie ne traitent que les caractères purs ASCII. Les lettres accentuées
+ne seront donc pas considérées comme des caractères alpha-numériques.
+
+
+   Valeur de retour
+
+La valeur de retour doit être interprétée en tant que valeur booléenne.
+Une valeur positive non nulle signifira qu'il s'agit bien d'un caractère
+alpha-numérique. La valeur 0 indiquera qu'il ne s'agit pas d'un caractère
+apha-numérique.
+
+  **********************************************************************************
+  *				Exemple de code			                   *
+  *                                                                                *
+  *	    #include <ctype.h>                                                     *
+  *	    #include <stdbool.h>                                                   *
+  *	    #include <stdio.h>                                                     *
+  *	    #include <stdlib.h>                                                    *
+  *	    #include <string.h>                                                    *
+  *                                                                                *
+  *	    int main()                                                             *
+  *	    {                                                                      *
+  *                                                                                *
+  *		char buffer[80];                                                   *
+  *		printf( "Enter your login (only alpha-numeric characters) : " );   *
+  * 		scanf( "%s", buffer );                                             *
+  *                                                                                *
+  *  		bool isCorrect = true;                                             *
+  *  		size_t length = strlen( buffer );                                  *
+  *		                                                                   *
+  *  		for( int i=0; i<length; i++ )                                      *
+  *		     if ( isalnum( buffer[i] ) == false )                          *
+  *          	     	isCorrect = false;                                         *
+  *                                                                                *
+  *		if ( isCorrect )                                                   *
+  *      	   printf( "Your login is correct\n" );                            *
+  *                                                                                *
+  *		else                                                               *
+  *		   printf( "Your login is not correct\n" );                        *
+  *		                                                                   *
+  *		return EXIT_SUCCESS;                                               *
+  *	     }		                                                           *
+  *                                                                                *
+  **********************************************************************************
+FiN
+
+
+Fonction isalpha
+
+	 int isalpha( int character );
+
+Cette fonction permet de tester si un caractère est alphabétique ou non.
+Un caractère sera considéré comme alphabétique s'il est de lettres minuscules
+ou de lettres majuscules. Rappel : les fonctions de cette librairie ne traitent
+que les caractères purs ASCII. Les lettres accentuées ne seront donc pas considérées
+comme des caractères alpha-numériques.
+
+
+      Valeur de retour
+
+La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur
+positive non nulle signifira qu'il s'agit bien d'un caractère alphabétique. La valeur
+0 indiquera qu'il ne s'agit pas d'un caractère aphabétique.
+
+
+  ****************************************************************************************
+  *				     Exemple de code                                     *
+  *                                                                                      *
+  *	#include <ctype.h>                                                               *
+  * 	#include <stdbool.h>                                                             *
+  *	#include <stdio.h>                                                               *
+  *	#include <stdlib.h>                                                              *
+  *	#include <string.h>                                                              *
+  *                                                                                      *
+  *	int main()                                                                       *
+  *	{                                                                                *
+  *	     char buffer[80];                                                            *
+  *	     printf( "Enter your last name : " );                                        *
+  *  	     scanf( "%[^\n]", buffer );                                                  *
+  *                                                                                      *
+  * 	     bool isCorrect = true;                                                      *
+  * 	     size_t length = strlen( buffer );                                           *
+  *                                                                                      *
+  *	     for( int i=0; i<length; i++ )                                               *
+  *          	  if ( isalpha( buffer[i] ) == false && isblank( buffer[i] ) == false )  *
+  *          	     isCorrect = false;	                                                 *
+  *                                                                                      *
+  *          if ( isCorrect )                                                            *
+  *           	  printf( "Your last name (%s) is correct\n", buffer );                  *
+  *                                                                                      *
+  *	     else                                                                        *
+  *	     	  printf( "Your last name (%s) is not correct\n", buffer );              *
+  *                                                                                      *
+  *           return EXIT_SUCCESS;                                                       *
+  *	}                                                                                *
+  *                                                                                      *
+  ****************************************************************************************
+FiN
+
+
+Fonction isblank
+
+	 int isblank( int character );
+
+Cette fonction permet de tester si un caractère est blanc ou non.
+Deux caractères sont considérés comme des blancs : l'espace et la tabulation.
+Par contre, un retour à la ligne ne sera pas considéré comme un caractère blanc.
+La fonction isspace est relativement proche, cepedant cette dernière valide plus
+de caractères et notamment ceux relatifs aux retours à la ligne (en fonction du
+système d'exploitation considéré).
+
+
+Valeur de retour
+
+La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur
+positive non nulle signifira qu'il s'agit bien d'un caractère blanc. La valeur 0
+indiquera qu'il ne s'agit pas d'un caractère blanc.
+
+  *******************************************************************************
+  *				Exemple de code                                 *
+  *                                                                             *
+  *	#include <ctype.h>                                                      *
+  * 	#include <stdio.h>                                                      *
+  *	#include <stdlib.h>                                                     *
+  *                                                                             *
+  *                                                                             *
+  *	int main()                                                              *
+  *	{                                                                       *
+  *                                                                             *
+  *	    printf( "%d\n", isblank( ' ' ) );                                   *
+  * 	    printf( "%d\n", isblank( '\t' ) );                                  *
+  *  	    printf( "%d\n", isblank( '\n' ) );                                  *
+  *                                                                             *
+  *  	    return EXIT_SUCCESS;                                                *
+  *	}                                                                       *
+  *                                                                             *
+  *******************************************************************************
+FiN
+
+
+Fonction iscntrl
+
+	 int iscntrl( int character );
+
+Le standard ASCII (American Standard Code for Information Interchange), dont dérive
+tous les autres systèmes de codages de caractères, définit 33 caractères de contrôles.
+Ces caractères ont leurs codes numériques compris en 0 et 31 plus la valeur 127.
+Le tableau ci-dessous rappelle ces codes ainsi que leurs significations.
+La fonction iscntrl permet donc de savoir si un caractère ASCII fait partie de cet ensemble ou non.
+
+
+   Valeur de retour
+
+La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur
+positive non nulle signifiera qu'il s'agit bien d'un caractère de contrôle.
+La valeur 0 indiquera qu'il ne s'agit pas d'un caractère de contrôle.
+
+  ******************************************************************************************
+  *					    Exemple de code                                *
+  *                                                                                        *
+  *	#include <ctype.h>                                                                 *
+  *	#include <stdio.h>                                                                 *
+  *	#include <stdlib.h>                                                                *
+  *                                                                                        *
+  * 	size_t strcpyWithoutControlCharacters( char * dest, const char * source )          *
+  *	{                                                                                  *
+  *                                                                                        *
+  *	    size_t counter = 0;                                                            *
+  * 	    char currentCharacter;                                                         *
+  * 	    do                                                                             *
+  *	    {                                                                              *
+  *		currentCharacter = *source++;                                              *
+  *       	if ( ! iscntrl( currentCharacter ) )                                       *
+  *		{                                                                          *
+  *		    *dest++ = currentCharacter;                                            *
+  *          	    counter ++;                                                            *
+  *     	}                                                                          *
+  *          }while ( currentCharacter != '\0' );                                          *
+  *                                                                                        *
+  *          *dest = '\0';                                                                 *
+  *                                                                                        *
+  *  	    return counter;                                                                *
+  *	}                                                                                  *
+  *                                                                                        *
+  *	int main()                                                                         *
+  *	{                                                                                  *
+  *                                                                                        *
+  *	     const char * original = "Hello\tWorld\nBye\r";                                *
+  *          char buffer[ 20 ];                                                            *
+  *                                                                                        *
+  *    	     size_t length = strcpyWithoutControlCharacters( buffer, original );           *
+  *                                                                                        *
+  *  	     printf( "strlen(\"%s\") == %zu\n", buffer, length );                          *
+  *                                                                                        *
+  *  	     return EXIT_SUCCESS;                                                          *
+  *	}                                                                                  *
+  *                                                                                        *
+  ******************************************************************************************
+FiN
+
+
+Fonction isdigit
+
+	 int isdigit( int character );
+
+Cette fonction permet de tester si un caractère est un chiffre décimal ou non.
+
+
+      Valeur de retour
+
+La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur
+positive non nulle signifira qu'il s'agit bien d'un chiffre décimal. La valeur 0
+indiquera qu'il ne s'agit pas d'un chiffre décimal.
+
+  ******************************************************************************
+  *				Exemple de code                                *
+  *                                                                            *
+  *	#include <ctype.h>                                                     *
+  *	#include <stdbool.h>                                                   *
+  *	#include <stdio.h>                                                     *
+  *	#include <stdlib.h>                                                    *
+  *	#include <string.h>                                                    *
+  *                                                                            *
+  *	int main()                                                             *
+  *	{                                                                      *
+  *                                                                            *
+  *	    char buffer[80];                                                   *
+  * 	    printf( "Enter your text : " );                                    *
+  *  	    scanf( "%[^\n]", buffer );                                         *
+  *                                                                            *
+  *  	    bool isCorrect = true;                                             *
+  *  	    size_t length = strlen( buffer );                                  *
+  *  	    for( int i=0; i<length; i++ )                                      *
+  *		if ( ! isdigit( buffer[i] ) )                                  *
+  *          	   isCorrect = false;                                          *
+  *                                                                            *
+  *  	    if ( isCorrect )                                                   *
+  *              printf( "Your text (%s) is a number\n", buffer );             *
+  *                                                                            *
+  *	    else                                                               *
+  *		printf( "Your text (%s) is not a number\n", buffer );          *
+  *                                                                            *
+  *          return EXIT_SUCCESS;                                              *
+  *     }                                                                      *
+  *                                                                            *
+  ******************************************************************************
+FiN
+
+
+Fonction isgraph
+
+	 int isgraph( int character );
+
+Cette fonction permet de tester si un caractère possède une représentation graphique
+ou non. Les caractères ASCII, exceptés les caractères de contrôles et le caractère
+d'espace, ont une représentation graphique (visuelle).
+
+
+	  Valeur de retour
+
+La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur
+positive non nulle signifira qu'il s'agit bien d'un caractère possédant une représentation
+graphique. La valeur 0 indiquera qu'il ne s'agit pas d'un caractère ayant une représentation visuelle.
+
+
+  *****************************************************************************************
+  *					Exemple de code                                   *
+  *                                                                                       *
+  *	#include <assert.h>                                                               *
+  *	#include <ctype.h>                                                                *
+  *	#include <stdio.h>                                                                *
+  *	#include <stdlib.h>                                                               *
+  *	#include <string.h>                                                               *
+  *                                                                                       *
+  *	int main()                                                                        *
+  *	{                                                                                 *
+  *                                                                                       *
+  *	      char * originalString = "Hello\nWorld Final\tWord";                         *
+  * 	      size_t length = strlen( originalString );                                   *
+  * 	      size_t counter = 0;                                                         *
+  *                                                                                       *
+  * 	      for( size_t i=0; i<length; i++ )                                            *
+  *           	   if ( isgraph( originalString[i] ) )                                    *  
+  *		   {                                                                      *
+  *			printf( "%c", originalString[i] );                                *
+  *         		counter ++;                                                       *
+  *     	   }                                                                      *
+  *                                                                                       *
+  *           printf( "\n" );                                                             *
+  *           assert( counter == 19 );                                                    *
+  *                                                                                       *
+  *           return EXIT_SUCCESS;                                                        *
+  *      }                                                                                *
+  *                                                                                       *
+  *****************************************************************************************
+FiN
+
+
+Fonction islower
+
+	 int islower( int character );
+
+Cette fonction permet de tester si un caractère donné est une lettre minuscule ou non.
+Rappel : les fonctions de cette librairie ne traitent que les caractères purs ASCII.
+Les lettres accentuées ne seront donc pas considérées comme des caractères alpha-numériques.
+De plus les caractères ne preprésentant même pas une lettre ne seront donc pas considérés comme une minuscule.
+
+   Valeur de retour
+
+La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur
+positive non nulle signifira cond qu'il s'agit bien d'une lettre minuscule. La valeur
+0 indiquera qu'il ne s'agit pas d'une lettre minuscule.
+
+
+  ***************************************************************************************
+  *					Exemple de code                                 *
+  *                                                                                     *
+  *	#include <ctype.h>                                                              *
+  *	#include <stdio.h>                                                              *
+  *	#include <stdlib.h>                                                             *
+  *	#include <string.h>                                                             *
+  *                                                                                     *
+  *	int main()                                                                      *
+  *	{                                                                               *
+  *                                                                                     *
+  *	     char buffer[80];                                                           *
+  * 	     printf( "Enter your last name : " );                                       *
+  *  	     scanf( "%[^\n]", buffer );                                                 *
+  *                                                                                     *
+  * 	     size_t length = strlen( buffer );                                          *
+  * 	     for( size_t i=0; i<length; i++ )                                           *
+  *           	  if ( islower( buffer[i] ) )                                           *
+  *          	     buffer[i] &= 223;  // equivalent à un appel à toupper              *
+  *                                                                                     *
+  *           printf( "Hello %s\n", buffer );                                           *
+  *                                                                                     *
+  *   	     return EXIT_SUCCESS;                                                       *
+  *	 }                                                                              *
+  *                                                                                     *
+  ***************************************************************************************
+
+Afin de mieux comprendre cet exemple, une petite précision peut être utile. Dans la table
+ASCII, les lettres majuscules et les lettres minuscules ont leurs codes numériques espacés
+de 32 unités. Ainsi le caractère 'A' a comme code numérique 65 alors que le caractère 'a'
+a comme code numérique 97. En fait, la valeur 32 correspond à 25 : donc la présence ou non
+d'un bit permet de passer d'une plage de caractères à l'autre. Ce choix est historique : à
+l'époque, exécuter des opérations numériques (ajout, sustraction) prenait plus de cycles CPU
+que l'exécution d'opérations binaires (opérations AND, OR, ...). Dans notre exemple, on fait
+un masque binaire AND sur la valeur numérique du caractère considéré en supprimant le sixième
+bit (255 - 32 = 223) : si l'on a une lettre minuscule, on passera donc bien à une lettre majuscule. 
+
+FiN
