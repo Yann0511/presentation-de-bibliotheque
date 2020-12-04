@@ -359,3 +359,348 @@ un masque binaire AND sur la valeur numérique du caractère considéré en supp
 bit (255 - 32 = 223) : si l'on a une lettre minuscule, on passera donc bien à une lettre majuscule. 
 
 FiN
+
+
+Fonction isprint
+
+	 int isprint( int character );
+
+Cette fonction permet de tester si un caractère s'affiche (is printable) ou non.
+Parmis ces caractères on retrouve l'ensemble des caractères ayant une représentation
+graphique (ceux pour qui la fonction isgraph retourne vrai) ainsi que le caractère
+d'espacement (de code 0x20). Autrement dit, il s'agit de l'ensemble des caractères
+ASCII, exceptés les caractères de contrôles (qui eux peuvent être vérifiés via la fonction iscntrl).
+
+       Valeur de retour
+
+La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur
+positive non nulle signifira qu'il s'agit bien d'un caractère pouvant s'afficher visuellement.
+La valeur 0 indiquera qu'il ne s'agit pas d'un caractère pouvant s'afficher.
+
+  ******************************************************************************************
+  *					Exemple de code                                    *
+  *                                                                                        *
+  *	#include <assert.h>                                                                *
+  *	#include <ctype.h>                                                                 *
+  *	#include <stdio.h>                                                                 *
+  *	#include <stdlib.h>                                                                *
+  *	#include <string.h>                                                                *
+  *                                                                                        *
+  *	int main()                                                                         *
+  *	{                                                                                  *
+  *                                                                                        *
+  *	     char * originalString = "Hello\nWorld Final\tWord";                           *
+  * 	     size_t length = strlen( originalString );                                     *
+  * 	     size_t counter = 0;                                                           *
+  *                                                                                        *
+  * 	     for( size_t i=0; i<length; i++ )                                              *
+  *          	  if ( isprint( originalString[i] ) )                                      *
+  *		  {                                                                        *
+  *			printf( "%c", originalString[i] );                                 *
+  *         		counter ++;                                                        *
+  *      	   }                                                                       *
+  *                                                                                        *
+  *           printf( "\n" );                                                              *
+  *   	     assert( counter == 20 );                                                      *
+  *                                                                                        *
+  *  	     return EXIT_SUCCESS;                                                          *
+  *        }                                                                               *
+  *                                                                                        *
+  ******************************************************************************************
+FiN
+
+
+Fonction ispunct
+
+	 int ispunct( int character );
+
+Cette fonction permet de tester si un caractère est considérés comme un caractère de
+ponctuattion ASCII. Sont considérés comme caractères de ponctuation ASCII les caractères
+suivant : !"#$%&'()*+,-./:;<=>?@ [\]^_`{|}~. Cet ensemble de caractères correspond aux
+caractères ayant une représentation graphique (testable via la fonction isgraph) mais
+n'étant pas alpha-numérique (testable via la fonction isalnum).
+
+
+	Valeur de retour
+
+La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur positive
+non nulle signifira qu'il s'agit bien d'un caractère ASCII de ponctuation. La valeur 0 indiquera
+qu'il ne s'agit pas d'un caractère ASCII de ponctuation.
+
+  *******************************************************************************************************
+  *					Exemple de code                                                 * 
+  *                                                                                                     *
+  *	#include <assert.h>                                                                             *
+  *	#include <ctype.h>                                                                              *
+  *	#include <stdio.h>                                                                              *
+  *	#include <stdlib.h>                                                                             *
+  *	#include <string.h>                                                                             *
+  *                                                                                                     *
+  *	int main()                                                                                      *
+  *	{                                                                                               *
+  *                                                                                                     *
+  *	      char * originalString = "Ceci est mon message : il est <<cool>>, n'est ce pas ?";         *
+  * 	      size_t length = strlen( originalString );                                                 *
+  *  	      size_t counter = 0;                                                                       *
+  *                                                                                                     *
+  *  	      for( size_t i=0; i<length; i++ )                                                          *
+  *            	   if ( ispunct( originalString[i] ) )                                                  *
+  *		   {                                                                                    *
+  *			printf( "%c", originalString[i] );                                              *
+  *         		counter ++;                                                                     *
+  *      	   }                                                                                    *
+  *                                                                                                     *
+  *           printf( "\n" );                                                                           *
+  *  	     assert( counter == 8 );                                                                    *
+  *                                                                                                     *
+  *  	     return EXIT_SUCCESS;                                                                       *
+  *	}                                                                                               *
+  *                                                                                                     *
+  *******************************************************************************************************
+FiN
+
+
+Fonction isspace
+
+	 int isspace( int character );
+
+Cette fonction permet de tester si un caractère est considéré comme un caractère d'espacement
+ou non. Sont considérés comme caractères d'espacement les caractères suivants : '\t', '\n',
+'\v', '\f', '\r' et l'espace (' '). Comparé à la fonction isblank, la fonction isspace considère
+donc en plus les caractères '\n', '\v', '\f' et '\r'.
+
+
+     Valeur de retour
+
+La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur positive non
+nulle signifira qu'il s'agit bien d'un caractère d'espacement. La valeur 0 indiquera qu'il ne
+s'agit pas d'un caractère d'espacement.
+
+
+  **************************************************************************************
+  *					Exemple de code                                *
+  *                                                                                    *
+  *	#include <ctype.h>                                                             *
+  *	#include <stdio.h>                                                             *
+  *	#include <stdlib.h>                                                            *
+  *                                                                                    *
+  *                                                                                    *
+  *	int main()                                                                     *
+  *	{                                                                              *
+  *                                                                                    *
+  *	       printf( "%d - %d\n", isblank( ' ' ), isspace( ' ' ) );                  *
+  * 	       printf( "%d - %d\n", isblank( '\t' ), isspace( '\t' ) );                *
+  *  	       printf( "%d - %d\n", isblank( '\n' ), isspace( '\n' ) );                *
+  *  	       printf( "%d - %d\n", isblank( 'a' ), isspace( 'a' ) );                  *
+  *                                                                                    *
+  *  	       return EXIT_SUCCESS;                                                    *
+  *	}                                                                              *
+  *                                                                                    *
+  *                                                                                    *
+  **************************************************************************************
+FiN
+
+
+Fonction isupper
+
+	 int isupper( int character );
+
+Cette fonction permet de tester si un caractère donné est une lettre majuscule ou non.
+Rappel : les fonctions de cette librairie ne traitent que les caractères purs ASCII.
+Les lettres accentuées ne seront donc pas considérées comme des caractères alpha-numériques.
+De plus les caractères ne preprésentant même pas une lettre ne seront donc pas considérés
+comme une majuscule.
+
+
+   Valeur de retour
+
+La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur positive
+non nulle signifira cond qu'il s'agit bien d'une lettre majuscule. La valeur 0 indiquera
+qu'il ne s'agit pas d'une lettre majuscule.
+
+
+  **************************************************************************************
+  *					Exemple de code                                *
+  *                                                                                    *
+  *	#include <ctype.h>                                                             *
+  *	#include <stdio.h>                                                             *
+  *	#include <stdlib.h>                                                            *
+  *	#include <string.h>                                                            *
+  *                                                                                    *
+  *	int main()                                                                     *
+  *	{                                                                              *
+  *                                                                                    *
+  *	      char buffer[80];                                                         *
+  * 	      printf( "Enter your last name : " );                                     *
+  *  	      scanf( "%[^\n]", buffer );                                               *
+  *                                                                                    *
+  *  	      size_t length = strlen( buffer );                                        *
+  * 	      for( size_t i=0; i<length; i++ )                                         *
+  *            	   if ( isupper( buffer[i] ) )                                         *
+  *			buffer[i] |= 32;  // equivalent à un appel à tolower           *
+  *                                                                                    *
+  *  	      printf( "Hello %s\n", buffer );                                          *
+  *                                                                                    *
+  *  	      return EXIT_SUCCESS;                                                     * 
+  *	}                                                                              *
+  *                                                                                    *
+  **************************************************************************************
+
+Afin de mieux comprendre cet exemple, une petite précision peut être utile. Dans la table
+ASCII, les lettres majuscules et les lettres minuscules ont leurs codes numériques espacés
+de 32 unités. Ainsi le caractère 'A' a comme code numérique 65 alors que le caractère 'a'
+a comme code numérique 97. En fait, la valeur 32 correspond à 25 : donc la présence ou non
+d'un bit permet de passer d'une plage de caractères à l'autre. Ce choix est historique : à
+l'époque, exécuter des opérations numériques (ajout, sustraction) prenait plus de cycles CPU
+que l'exécution d'opérations binaires (opérations AND, OR, ...). Dans notre exemple, on fait
+un masque binaire OR sur la valeur numérique du caractère considéré en ajoutant le sixième
+bit : si l'on a une lettre majuscule, on passera donc bien à une lettre minuscule. 
+
+FiN
+
+
+Fonction isxdigit
+
+	 int isxdigit( int character );
+
+Cette fonction permet de tester si un caractère est un chiffre hexadécimal ou non. Pour rappel
+le système hexadécimal définit 16 chiffres : 0123456789ABCDEF.
+
+
+   Valeur de retour
+
+La valeur de retour doit être interprétée en tant que valeur booléenne. une valeur positive
+non nulle signifira qu'il s'agit bien d'un chiffre hexadécimal. La valeur 0 indiquera qu'il
+ne s'agit pas d'un chiffre hexadécimal.
+
+
+  ***********************************************************************************
+  *					Exemple de code                             *
+  *                                                                                 *
+  *	#include <ctype.h>                                                          *
+  *	#include <stdbool.h>                                                        *
+  *	#include <stdio.h>                                                          *
+  *	#include <stdlib.h>                                                         *
+  *	#include <string.h>                                                         *
+  *                                                                                 *
+  *	int main()                                                                  *
+  *	{                                                                           *
+  *	     char buffer[80];                                                       *
+  *  	     printf( "Enter a hexadecimal value : " );                              *
+  *  	     scanf( "%[^\n]", buffer );                                             *
+  *                                                                                 *
+  *  	     bool isCorrect = true;                                                 *
+  *  	     size_t length = strlen( buffer );                                      *
+  *  	     for( int i=0; i<length; i++ )                                          *
+  *           	  if ( ! isxdigit( buffer[i] ) )                                    *
+  *          	     isCorrect = false;                                             *
+  *                                                                                 *
+  *           if ( isCorrect )                                                      *
+  *	     {                                                                      *
+  *		printf( "Your text (%s) is a hexadecimal number\n", buffer );       *
+  *      	unsigned long value = strtoul( buffer, 0, 16 );                     *
+  *      	printf( "The corresponding decimal value is %zu\n", value );        *
+  *           }                                                                     *
+  *	                                                                            *
+  *  	     else                                                                   *
+  *	         printf( "Your text (%s) is not a hexadecimal number\n", buffer );  *
+  *                                                                                 * 
+  *           return EXIT_SUCCESS;                                                  *
+  *       }                                                                         *
+  *                                                                                 *
+  ***********************************************************************************
+ FiN
+
+
+Fonction tolower
+
+	 int tolower( int character );
+
+Cette fonction permet de convertir une lettre majuscule à une lettre minuscule.
+Rappel : les fonctions de cette librairie ne traitent que les caractères purs ASCII.
+Les lettres accentuées ne seront donc pas considérées comme des caractères alpha-numériques.
+
+
+    	 Valeur de retour
+
+Cette fonction retourne le caractère équivalent transformé en minuscule, si le caractère
+passé en paramètre était une majuscule. Si le caractère passé n'était pas une majuscule,
+alors la fonction retourne le caractère inchangé. Le résultat doit bien entendu être considéré
+en tant que unsigned char, néanmoins la fonction peut -1 si EOF a été fournit en paramètre.
+
+
+  ************************************************************************************
+  *					Exemple de code                              *
+  *                                                                                  *
+  *	#include <ctype.h>                                                           *
+  *	#include <stdio.h>                                                           *
+  *	#include <stdlib.h>                                                          *
+  *	#include <string.h>                                                          *
+  *                                                                                  *
+  *	char * strtolower( char * dest, const char * src )                           *
+  *	{                                                                            *
+  *		char * result = dest;                                                *
+  * 		while( *dest++ = tolower( *src++ ) );                                * 
+  *  		return result;                                                       *
+  *	}                                                                            *
+  *                                                                                  *
+  *	int main()                                                                   *
+  *	{                                                                            *
+  *                                                                                  *
+  *		char * input = "Diego De La Vega";                                   *
+  * 		char result[17];                                                     *
+  *                                                                                  *
+  *  		printf( "Result: %s\n", strtolower( result, input ) );               *
+  *                                                                                  *
+  *  		return EXIT_SUCCESS;                                                 *
+  *	}                                                                            *
+  *                                                                                  *
+  ************************************************************************************
+ FiN
+
+
+Fonction toupper
+
+	 int toupper( int character );
+
+Cette fonction permet de convertir une lettre minuscule à une lettre majuscule.
+Rappel : les fonctions de cette librairie ne traitent que les caractères purs ASCII.
+Les lettres accentuées ne seront donc pas considérées comme des caractères alpha-numériques.
+
+
+    Valeur de retour
+
+Cette fonction retourne le caractère équivalent transformé en majuscule, si le caractère
+passé en paramètre était une minuscule. Si le caractère passé n'était pas une minuscule,
+alors la fonction retourne le caractère inchangé. Le résultat doit bien entendu être
+considéré en tant que unsigned char, néanmoins la fonction peut -1 si EOF a été fournit en paramètre.
+
+
+  ********************************************************************************************
+  *					Exemple de code                                      *
+  *                                                                                          *
+  *	#include <ctype.h>                                                                   *
+  *	#include <stdio.h>                                                                   *
+  *	#include <stdlib.h>                                                                  *
+  *	#include <string.h>                                                                  *
+  *                                                                                          *
+  *	char * strtoupper( char * dest, const char * src )                                   *
+  *	{                                                                                    *
+  *		char * result = dest;                                                        *
+  *  		while( *dest++ = toupper( *src++ ) );                                        *
+  *  		return result;                                                               *
+  *	}                                                                                    *
+  *                                                                                          *
+  *	int main()                                                                           *
+  * 	{                                                                                    *
+  *                                                                                          *
+  *		char * input = "Diego De La Vega";                                           *
+  *  		char result[17];                                                             * 
+  *                                                                                          *
+  * 		printf( "Result: %s\n", strtoupper( result, input ) );                       *
+  *                                                                                          *
+  * 		return EXIT_SUCCESS;                                                         *
+  *	}                                                                                    *
+  *                                                                                          *
+  ********************************************************************************************
+FiN

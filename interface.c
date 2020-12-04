@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-#define TAILLE_MAX 200
+#include "biblio.h"
+
+
 
 void init_chaine(char *chaine)
 {
