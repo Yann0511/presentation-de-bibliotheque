@@ -13,15 +13,16 @@ int main()
     
     if(fichier != NULL )
     {
+	printf("\033[31m");
 	print(fichier , "Presentation") ;
 	
 	lib = malloc(20*sizeof(char)) ;
-	//init_chaine(lib) ;
 	
 	do
 	{
+	    printf("\033[7m" );
 	    printf("\n\n\t Librairie a presenter (q pour quitter) : ") ;
-	    //init_chaine(lib) ;
+	    printf("\033[0m" );
 	    fgets(lib , 18 , stdin) ;
        
 	}while(presentation_lib(lib , fichier) == 1) ;

@@ -1,4 +1,6 @@
 Presentation
+VERT
+
 		/////////////////////////////////////////////////////////////////
 		//                                                             //
 		//        Présentation des librairie ctype.h et limit.h        //
@@ -13,12 +15,14 @@ Presentation
 		//                      Licence Informatique                   //
 		/**                         IMSP - UAC                        **/
 		//                                                             //
-		/////////////////////////////////////////////////////////////////			
+		/////////////////////////////////////////////////////////////////
+BLANC
 FiN
 
 ctype.h
 
-
+BLEU
+CLI
 		  ***********   *************  *       *   **********    ***********
 		  *                   *         *     *    *        *    *
 		  *                   *          *   *     *        *    *
@@ -26,7 +30,7 @@ ctype.h
 		  *                   *            *       *             *
 		  *                   *            *       *             *
 		  ***********         *            *       *             ***********
-
+BLANC
 
 
     Cette librairie propose un ensemble de fonction de traitement de caractères. On peut classifier
@@ -39,58 +43,95 @@ Coding for Information Interchange). Cette table ne définie que 128 caratcères
 Ainsi, un caractère « é » (définit dans les standards ISO-8859-1, UTF-8, UTF-16, ...) ne sera pas
 pris en compte : il n'est donc pas un caractère alpha-numérique.
 
-
+CYAN
      	       	    Les fonctions de tests de caractères
-
+		    
+BLANC
      Ces fonctions sont très facile à identifier : elles sont toutes préfixées de is. Elles renvoient
  toutes une valeur entière typée int, mais vous devrait interpréter cette valeur en temps que booléen
  (true / false). Voici la liste des fonctions de cette catégorie. 
+BLEU
 
        	      ************************************************************************************************************
               | id  |    Nom   |   Type     | 	      	       	   Description				      |	 Depuis  |
 	      ************************************************************************************************************	 
+	      |     |          |            |                                                                 |          |
 	      |	 1  |  isalnum | fonction   |	Vérifie si un caractère est alpha-numérique. 		      |	  C89    |
+	      |     |          |            |                                                                 |          |
 	      ************************************************************************************************************  
-	      |  2  |  isalpha | fonction   |	Vérifie si un caractère est alphabétique. 		      |	  C89	 |
+	      |     |          |            |                                                                 |          |
+	      |	 2  |  isalpha | fonction   |	Vérifie si un caractère est alphabétique. 		      |	  C89	 |
+	      |     |          |            |                                                                 |          |
 	      ************************************************************************************************************
-      	      |  3  |  isblank | fonction   |	Vérifie si un caractère est blanc ou non. 	 	      |	  C89    |
+      	      |     |          |            |                                                                 |          |
+	      |  3  |  isblank | fonction   |	Vérifie si un caractère est blanc ou non. 	 	      |	  C89    |
+	      |     |          |            |                                                                 |          |
 	      ************************************************************************************************************  
+	      |     |          |            |                                                                 |          |
 	      |  4  |  iscntrl | fonction   |	Vérifie si l'on a à faire à un caractère de contrôle. 	      |	  C89    |
+	      |     |          |            |                                                                 |          |
 	      ************************************************************************************************************  
+	      |     |          |            |                                                                 |          |
 	      |  5  |  isdigit | fonction   |	Vérifie si un caractère est un chiffre. 		      |	  C89    |
+	      |     |          |            |                                                                 |          |
 	      ************************************************************************************************************
+	      |     |          |            |                                                                 |          |
 	      |  6  |  isgraph | fonction   |	Vérifie si un caractère posséde une représentation graphique. |	  C89    |
+	      |     |          |            |                                                                 |          |
 	      ************************************************************************************************************  
+	      |     |          |            |                                                                 |          |
 	      |  7  |  islower | fonction   | 	Vérifie si un caractère est une lettre minuscule. 	      |	  C89    |
+	      |     |          |            |                                                                 |          |
 	      ************************************************************************************************************  
+	      |     |          |            |                                                                 |          |
 	      |  8  |  isprint | fonction   |	Vérifie si un caractère est affichable (printable) ou non.    |	  C89    |
+	      |     |          |            |                                                                 |          |
               ************************************************************************************************************  
+	      |     |          |            |                                                                 |          |
 	      |  9  |  ispunct | fonction   |	Vérifie si l'on a à faire à un caractère de ponctuation.      |	  C89    |
+	      |     |          |            |                                                                 |          |
 	      ************************************************************************************************************
+	      |     |          |            |                                                                 |          |
 	      | 10  |  isspace | fonction   |  Vérifie si l'on a à faire à un caractère d'espacement. 	      |	  C89    |
+	      |     |          |            |                                                                 |          |
               ************************************************************************************************************ 
+      	      |     |          |            |                                                                 |          |
 	      | 11  |  isupper | fonction   |	Vérifie si un caractère est une lettre majuscule. 	      |	  C89    |
+	      |     |          |            |                                                                 |          |
 	      ************************************************************************************************************  
+	      |     |          |            |                                                                 |          |
 	      |  12 |  isxdigit| fonction   |	Vérifie si un caractère est un chiffre hexadécimal. 	      |	  C89    |
+	      |     |          |            |                                                                 |          |
 	      ************************************************************************************************************
-
+CYAN
 
 
 			Les fonctions de transformations de caractères
 			
+BLEU
 		 ********************************************************************************************************
 		 | id  |  Nom       |	  Type	   |			Description			   |  Depuis    |
 		 ********************************************************************************************************	  
+		 |     |            |              |                                                       |            |
 		 |  13 | tolower    |	fonction   |	Transforme une lettre majuscule en une minuscule.  |	C89     |
+		 |     |            |              |                                                       |            |
 		 ********************************************************************************************************	
+		 |     |            |              |                                                       |            |
 		 |  14 | toupper    |	fonction   |	Transforme une lettre minuscule en une majuscule.  |	C89     |
+		 |     |            |              |                                                       |            |
 		 ********************************************************************************************************
+BLANC
 FiN
 
 
 isalnum
-
-  	 	 int isalnum( int character );
+BLEU
+               *********************************
+	       *                               *
+	       * int isalnum( int character ); *
+	       *                               *
+               *********************************
+BLANC
 
 Cette fonction permet de tester si un caractère est alpha-numérique ou non.
 Un caractère sera considéré comme alpha-numérique s'il est une lettre
@@ -98,13 +139,15 @@ Un caractère sera considéré comme alpha-numérique s'il est une lettre
 librairie ne traitent que les caractères purs ASCII. Les lettres accentuées
 ne seront donc pas considérées comme des caractères alpha-numériques.
 
-
+CYAN
    Valeur de retour
-
+   
+BLANC
 La valeur de retour doit être interprétée en tant que valeur booléenne.
 Une valeur positive non nulle signifira qu'il s'agit bien d'un caractère
 alpha-numérique. La valeur 0 indiquera qu'il ne s'agit pas d'un caractère
 apha-numérique.
+ROUGE
 
   **********************************************************************************
   *				Exemple de code			                   *
@@ -139,12 +182,18 @@ apha-numérique.
   *	     }		                                                           *
   *                                                                                *
   **********************************************************************************
+BLANC
 FiN
 
 
 isalpha
-
-	 int isalpha( int character );
+BLEU
+        ********************************
+	*                              *
+	* int isalpha( int character );*
+	*                              *
+	********************************
+BLANC
 
 Cette fonction permet de tester si un caractère est alphabétique ou non.
 Un caractère sera considéré comme alphabétique s'il est de lettres minuscules
@@ -152,14 +201,15 @@ ou de lettres majuscules. Rappel : les fonctions de cette librairie ne traitent
 que les caractères purs ASCII. Les lettres accentuées ne seront donc pas considérées
 comme des caractères alpha-numériques.
 
-
+CYAN
       Valeur de retour
-
+      
+BLANC
 La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur
 positive non nulle signifira qu'il s'agit bien d'un caractère alphabétique. La valeur
 0 indiquera qu'il ne s'agit pas d'un caractère aphabétique.
 
-
+ROUGE
   ****************************************************************************************
   *				     Exemple de code                                     *
   *                                                                                      *
@@ -192,12 +242,18 @@ positive non nulle signifira qu'il s'agit bien d'un caractère alphabétique. La
   *	}                                                                                *
   *                                                                                      *
   ****************************************************************************************
+BLANC
 FiN
 
 
 isblank
-
-	 int isblank( int character );
+BLEU
+        *******************************
+	*                             *
+	*int isblank( int character );*
+	*                             *
+	*******************************
+BLANC
 
 Cette fonction permet de tester si un caractère est blanc ou non.
 Deux caractères sont considérés comme des blancs : l'espace et la tabulation.
@@ -206,13 +262,15 @@ La fonction isspace est relativement proche, cepedant cette dernière valide plu
 de caractères et notamment ceux relatifs aux retours à la ligne (en fonction du
 système d'exploitation considéré).
 
-
-Valeur de retour
-
+CYAN
+	Valeur de retour
+	
+BLANC
 La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur
 positive non nulle signifira qu'il s'agit bien d'un caractère blanc. La valeur 0
 indiquera qu'il ne s'agit pas d'un caractère blanc.
 
+ROUGE
   *******************************************************************************
   *				Exemple de code                                 *
   *                                                                             *
@@ -232,12 +290,18 @@ indiquera qu'il ne s'agit pas d'un caractère blanc.
   *	}                                                                       *
   *                                                                             *
   *******************************************************************************
+BLANC
 FiN
 
 
 iscntrl
-
-	 int iscntrl( int character );
+BLEU
+        *******************************
+	*                             *
+        *int iscntrl( int character );*
+	*                             *
+	*******************************
+BLANC
 
 Le standard ASCII (American Standard Code for Information Interchange), dont dérive
 tous les autres systèmes de codages de caractères, définit 33 caractères de contrôles.
@@ -245,13 +309,14 @@ Ces caractères ont leurs codes numériques compris en 0 et 31 plus la valeur 12
 Le tableau ci-dessous rappelle ces codes ainsi que leurs significations.
 La fonction iscntrl permet donc de savoir si un caractère ASCII fait partie de cet ensemble ou non.
 
-
+CYAN
    Valeur de retour
-
+BLANC
 La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur
 positive non nulle signifiera qu'il s'agit bien d'un caractère de contrôle.
 La valeur 0 indiquera qu'il ne s'agit pas d'un caractère de contrôle.
 
+ROUGE
   ******************************************************************************************
   *					    Exemple de code                                *
   *                                                                                        *
@@ -293,21 +358,28 @@ La valeur 0 indiquera qu'il ne s'agit pas d'un caractère de contrôle.
   *	}                                                                                  *
   *                                                                                        *
   ******************************************************************************************
+BLANC
 FiN
 
 
 isdigit
-
-	 int isdigit( int character );
-
+BLEU
+        *******************************
+	*                             *
+        *int isdigit( int character );*
+	*                             *
+	*******************************
+BLANC
 Cette fonction permet de tester si un caractère est un chiffre décimal ou non.
 
-
+CYAN
       Valeur de retour
-
+      
+BLANC
 La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur
 positive non nulle signifira qu'il s'agit bien d'un chiffre décimal. La valeur 0
 indiquera qu'il ne s'agit pas d'un chiffre décimal.
+ROUGE
 
   ******************************************************************************
   *				Exemple de code                                *
@@ -341,24 +413,31 @@ indiquera qu'il ne s'agit pas d'un chiffre décimal.
   *     }                                                                      *
   *                                                                            *
   ******************************************************************************
+BLANC
 FiN
 
 
 isgraph
-
-	 int isgraph( int character );
+BLEU
+        *******************************
+	*                             *
+	*int isgraph( int character );*
+	*                             *
+	*******************************
+BLANC
 
 Cette fonction permet de tester si un caractère possède une représentation graphique
 ou non. Les caractères ASCII, exceptés les caractères de contrôles et le caractère
 d'espace, ont une représentation graphique (visuelle).
 
-
+CYAN
 	  Valeur de retour
 
+BLANC
 La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur
 positive non nulle signifira qu'il s'agit bien d'un caractère possédant une représentation
 graphique. La valeur 0 indiquera qu'il ne s'agit pas d'un caractère ayant une représentation visuelle.
-
+ROUGE
 
   *****************************************************************************************
   *					Exemple de code                                   *
@@ -390,25 +469,31 @@ graphique. La valeur 0 indiquera qu'il ne s'agit pas d'un caractère ayant une r
   *      }                                                                                *
   *                                                                                       *
   *****************************************************************************************
+BLANC
 FiN
 
 
 islower
+BLEU
+        *******************************
+	*                             *
+        *int islower( int character );*
+	*                             *
+	*******************************
 
-	 int islower( int character );
-
+BLANC
 Cette fonction permet de tester si un caractère donné est une lettre minuscule ou non.
 Rappel : les fonctions de cette librairie ne traitent que les caractères purs ASCII.
 Les lettres accentuées ne seront donc pas considérées comme des caractères alpha-numériques.
 De plus les caractères ne preprésentant même pas une lettre ne seront donc pas considérés comme une minuscule.
-
+CYAN
    Valeur de retour
-
+BLANC
 La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur
 positive non nulle signifira cond qu'il s'agit bien d'une lettre minuscule. La valeur
 0 indiquera qu'il ne s'agit pas d'une lettre minuscule.
 
-
+ROUGE
   ***************************************************************************************
   *					Exemple de code                                 *
   *                                                                                     *
@@ -435,6 +520,7 @@ positive non nulle signifira cond qu'il s'agit bien d'une lettre minuscule. La v
   *	 }                                                                              *
   *                                                                                     *
   ***************************************************************************************
+BLANC
 
 Afin de mieux comprendre cet exemple, une petite précision peut être utile. Dans la table
 ASCII, les lettres majuscules et les lettres minuscules ont leurs codes numériques espacés
@@ -450,21 +536,27 @@ FiN
 
 
 isprint
+BLEU
+        *******************************
+	*                             *
+      	*int isprint( int character );*
+	*                             *
+	*******************************
 
-	 int isprint( int character );
-
+BLANC
 Cette fonction permet de tester si un caractère s'affiche (is printable) ou non.
 Parmis ces caractères on retrouve l'ensemble des caractères ayant une représentation
 graphique (ceux pour qui la fonction isgraph retourne vrai) ainsi que le caractère
 d'espacement (de code 0x20). Autrement dit, il s'agit de l'ensemble des caractères
 ASCII, exceptés les caractères de contrôles (qui eux peuvent être vérifiés via la fonction iscntrl).
-
+CYAN
        Valeur de retour
-
+BLANC
 La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur
 positive non nulle signifira qu'il s'agit bien d'un caractère pouvant s'afficher visuellement.
 La valeur 0 indiquera qu'il ne s'agit pas d'un caractère pouvant s'afficher.
 
+ROUGE
   ******************************************************************************************
   *					Exemple de code                                    *
   *                                                                                        *
@@ -495,26 +587,34 @@ La valeur 0 indiquera qu'il ne s'agit pas d'un caractère pouvant s'afficher.
   *        }                                                                               *
   *                                                                                        *
   ******************************************************************************************
+BLANC
 FiN
 
 
 ispunct
+BLEU
+        *******************************
+	*                             *
+	*int ispunct( int character );*
+	*                             *
+	*******************************
 
-	 int ispunct( int character );
-
+BLANC
 Cette fonction permet de tester si un caractère est considérés comme un caractère de
 ponctuattion ASCII. Sont considérés comme caractères de ponctuation ASCII les caractères
 suivant : !"#$%&'()*+,-./:;<=>?@ [\]^_`{|}~. Cet ensemble de caractères correspond aux
 caractères ayant une représentation graphique (testable via la fonction isgraph) mais
 n'étant pas alpha-numérique (testable via la fonction isalnum).
 
-
+CYAN
 	Valeur de retour
 
+BLANC
 La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur positive
 non nulle signifira qu'il s'agit bien d'un caractère ASCII de ponctuation. La valeur 0 indiquera
 qu'il ne s'agit pas d'un caractère ASCII de ponctuation.
 
+ROUGE
   *******************************************************************************************************
   *					Exemple de code                                                 * 
   *                                                                                                     *
@@ -545,25 +645,31 @@ qu'il ne s'agit pas d'un caractère ASCII de ponctuation.
   *	}                                                                                               *
   *                                                                                                     *
   *******************************************************************************************************
+BLANC
 FiN
 
 
 isspace
-
-	 int isspace( int character );
-
+BLEU
+        *******************************
+	*                             *
+        *int isspace( int character );*
+	*                             *
+	*******************************
+BLANC
 Cette fonction permet de tester si un caractère est considéré comme un caractère d'espacement
 ou non. Sont considérés comme caractères d'espacement les caractères suivants : '\t', '\n',
 '\v', '\f', '\r' et l'espace (' '). Comparé à la fonction isblank, la fonction isspace considère
 donc en plus les caractères '\n', '\v', '\f' et '\r'.
 
-
+CYAN
      Valeur de retour
 
+BLANC
 La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur positive non
 nulle signifira qu'il s'agit bien d'un caractère d'espacement. La valeur 0 indiquera qu'il ne
 s'agit pas d'un caractère d'espacement.
-
+ROUGE
 
   **************************************************************************************
   *					Exemple de code                                *
@@ -586,12 +692,18 @@ s'agit pas d'un caractère d'espacement.
   *                                                                                    *
   *                                                                                    *
   **************************************************************************************
+BLANC
 FiN
 
 
 isupper
-
-	 int isupper( int character );
+BLEU
+        *******************************
+	*                             *
+	*int isupper( int character );*
+	*                             *
+	*******************************
+BLANC
 
 Cette fonction permet de tester si un caractère donné est une lettre majuscule ou non.
 Rappel : les fonctions de cette librairie ne traitent que les caractères purs ASCII.
@@ -599,13 +711,14 @@ Les lettres accentuées ne seront donc pas considérées comme des caractères a
 De plus les caractères ne preprésentant même pas une lettre ne seront donc pas considérés
 comme une majuscule.
 
-
+CYAN
    Valeur de retour
 
+BLANC
 La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur positive
 non nulle signifira cond qu'il s'agit bien d'une lettre majuscule. La valeur 0 indiquera
 qu'il ne s'agit pas d'une lettre majuscule.
-
+ROUGE
 
   **************************************************************************************
   *					Exemple de code                                *
@@ -633,6 +746,7 @@ qu'il ne s'agit pas d'une lettre majuscule.
   *	}                                                                              *
   *                                                                                    *
   **************************************************************************************
+BLANC
 
 Afin de mieux comprendre cet exemple, une petite précision peut être utile. Dans la table
 ASCII, les lettres majuscules et les lettres minuscules ont leurs codes numériques espacés
@@ -648,19 +762,24 @@ FiN
 
 
 isxdigit
-
-	 int isxdigit( int character );
+BLEU
+        ********************************
+	*                              *
+	*int isxdigit( int character );*
+	*                              *
+	********************************
+BLANC
 
 Cette fonction permet de tester si un caractère est un chiffre hexadécimal ou non. Pour rappel
 le système hexadécimal définit 16 chiffres : 0123456789ABCDEF.
-
+CYAN
 
    Valeur de retour
-
+BLANC
 La valeur de retour doit être interprétée en tant que valeur booléenne. une valeur positive
 non nulle signifira qu'il s'agit bien d'un chiffre hexadécimal. La valeur 0 indiquera qu'il
 ne s'agit pas d'un chiffre hexadécimal.
-
+ROUGE
 
   ***********************************************************************************
   *					Exemple de code                             *
@@ -697,25 +816,32 @@ ne s'agit pas d'un chiffre hexadécimal.
   *       }                                                                         *
   *                                                                                 *
   ***********************************************************************************
- FiN
+BLANC
+FiN
 
 
 tolower
-
-	 int tolower( int character );
+BLEU
+        *******************************
+	*                             *
+	*int tolower( int character );*
+	*                             *
+	*******************************
+BLANC
 
 Cette fonction permet de convertir une lettre majuscule à une lettre minuscule.
 Rappel : les fonctions de cette librairie ne traitent que les caractères purs ASCII.
 Les lettres accentuées ne seront donc pas considérées comme des caractères alpha-numériques.
-
+CYAN
 
     	 Valeur de retour
+BLANC
 
 Cette fonction retourne le caractère équivalent transformé en minuscule, si le caractère
 passé en paramètre était une majuscule. Si le caractère passé n'était pas une majuscule,
 alors la fonction retourne le caractère inchangé. Le résultat doit bien entendu être considéré
 en tant que unsigned char, néanmoins la fonction peut -1 si EOF a été fournit en paramètre.
-
+ROUGE
 
   ************************************************************************************
   *					Exemple de code                              *
@@ -744,24 +870,33 @@ en tant que unsigned char, néanmoins la fonction peut -1 si EOF a été fournit
   *	}                                                                            *
   *                                                                                  *
   ************************************************************************************
+BLANC
 FiN
 
 
 toupper
+BLEU
 
-	 int toupper( int character );
+        *******************************
+	*                             *
+	*int toupper( int character );*
+	*                             *
+	*******************************
+BLANC
 
 Cette fonction permet de convertir une lettre minuscule à une lettre majuscule.
 Rappel : les fonctions de cette librairie ne traitent que les caractères purs ASCII.
 Les lettres accentuées ne seront donc pas considérées comme des caractères alpha-numériques.
-
+CYAN
 
     Valeur de retour
+BLANC
 
 Cette fonction retourne le caractère équivalent transformé en majuscule, si le caractère
 passé en paramètre était une minuscule. Si le caractère passé n'était pas une minuscule,
 alors la fonction retourne le caractère inchangé. Le résultat doit bien entendu être
 considéré en tant que unsigned char, néanmoins la fonction peut -1 si EOF a été fournit en paramètre.
+ROUGE
 
 
   ********************************************************************************************
@@ -791,4 +926,5 @@ considéré en tant que unsigned char, néanmoins la fonction peut -1 si EOF a �
   *	}                                                                                    *
   *                                                                                          *
   ********************************************************************************************
+BLANC
 FiN

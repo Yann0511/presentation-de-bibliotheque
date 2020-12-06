@@ -14,6 +14,8 @@ void print(FILE *fichier , char *fonction) ;
 void presentation_fonctype(char *tab , FILE *fichier) ;
 
 int presentation_lib(char *tab , FILE *fichier) ;
+
+void color(char *tab) ;
     
 #endif
 

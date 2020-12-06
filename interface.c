@@ -48,6 +48,44 @@ void search(FILE *fichier , char *fonction)
 
 }
 
+void color(char *tab)
+{
+    if(!compare(tab , "BLANC\n" , 6))
+    {
+	init_chaine(tab) ;
+	printf("\033[0m" );
+    }
+
+    else if(!compare(tab , "ROUGE\n" , 6))
+    {
+	init_chaine(tab) ;
+	printf("\033[31m" );
+    }
+
+    else if(!compare(tab , "VERT\n" , 5))
+    {
+	init_chaine(tab) ;
+	printf("\033[32m" );
+    }
+
+    else if(!compare(tab , "CYAN\n" , 5))
+    {
+	init_chaine(tab) ;
+	printf("\033[36m" );
+    }
+
+    else if(!compare(tab , "BLEU\n" , 5))
+    {
+	init_chaine(tab) ;
+	printf("\033[34m" );
+    }
+
+    else if(!compare(tab , "CLI\n" , 4))
+    {
+	init_chaine(tab) ;
+	printf("\033[5m" );
+    }
+}
 
 void print(FILE *fichier , char *fonction)
 {
@@ -63,7 +101,10 @@ void print(FILE *fichier , char *fonction)
 	fgets(chaine , TAILLE_MAX - 2 , fichier) ;
 
 	if(compare(chaine , fin , 3))
+	{
+	    color(chaine) ;
 	    printf("%s" , chaine) ;
+	}
     }
 
 }
@@ -80,8 +121,9 @@ int presentation_lib(char *tab , FILE *fichier)
 
 	do
 	{
+	    printf("\033[7m" );
 	    printf("\n\n\t Fonction a presenter ( c pour changer de librairie et q pour quitter) : ") ;
-  
+	    printf("\033[0m" );
 	    fgets(fonc , 18 , stdin) ;
 		    
 	    presentation_fonctype(fonc , fichier) ;
