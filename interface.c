@@ -56,10 +56,10 @@ void color(char *tab)
 	printf("\033[0m" );
     }
 
-    else if(!compare(tab , "ROUGE\n" , 6))
+    else if(!compare(tab , "JAUNE\n" , 6))
     {
 	init_chaine(tab) ;
-	printf("\033[31m" );
+	printf("\033[93m" );
     }
 
     else if(!compare(tab , "VERT\n" , 5))

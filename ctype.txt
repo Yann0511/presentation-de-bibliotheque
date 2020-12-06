@@ -109,6 +109,7 @@ CYAN
 			Les fonctions de transformations de caractères
 			
 BLEU
+
 		 ********************************************************************************************************
 		 | id  |  Nom       |	  Type	   |			Description			   |  Depuis    |
 		 ********************************************************************************************************	  
@@ -147,7 +148,7 @@ La valeur de retour doit être interprétée en tant que valeur booléenne.
 Une valeur positive non nulle signifira qu'il s'agit bien d'un caractère
 alpha-numérique. La valeur 0 indiquera qu'il ne s'agit pas d'un caractère
 apha-numérique.
-ROUGE
+JAUNE
 
   **********************************************************************************
   *				Exemple de code			                   *
@@ -209,7 +210,7 @@ La valeur de retour doit être interprétée en tant que valeur booléenne. Une 
 positive non nulle signifira qu'il s'agit bien d'un caractère alphabétique. La valeur
 0 indiquera qu'il ne s'agit pas d'un caractère aphabétique.
 
-ROUGE
+JAUNE
   ****************************************************************************************
   *				     Exemple de code                                     *
   *                                                                                      *
@@ -270,7 +271,7 @@ La valeur de retour doit être interprétée en tant que valeur booléenne. Une 
 positive non nulle signifira qu'il s'agit bien d'un caractère blanc. La valeur 0
 indiquera qu'il ne s'agit pas d'un caractère blanc.
 
-ROUGE
+JAUNE
   *******************************************************************************
   *				Exemple de code                                 *
   *                                                                             *
@@ -316,7 +317,7 @@ La valeur de retour doit être interprétée en tant que valeur booléenne. Une 
 positive non nulle signifiera qu'il s'agit bien d'un caractère de contrôle.
 La valeur 0 indiquera qu'il ne s'agit pas d'un caractère de contrôle.
 
-ROUGE
+JAUNE
   ******************************************************************************************
   *					    Exemple de code                                *
   *                                                                                        *
@@ -379,7 +380,7 @@ BLANC
 La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur
 positive non nulle signifira qu'il s'agit bien d'un chiffre décimal. La valeur 0
 indiquera qu'il ne s'agit pas d'un chiffre décimal.
-ROUGE
+JAUNE
 
   ******************************************************************************
   *				Exemple de code                                *
@@ -437,7 +438,7 @@ BLANC
 La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur
 positive non nulle signifira qu'il s'agit bien d'un caractère possédant une représentation
 graphique. La valeur 0 indiquera qu'il ne s'agit pas d'un caractère ayant une représentation visuelle.
-ROUGE
+JAUNE
 
   *****************************************************************************************
   *					Exemple de code                                   *
@@ -493,7 +494,7 @@ La valeur de retour doit être interprétée en tant que valeur booléenne. Une 
 positive non nulle signifira cond qu'il s'agit bien d'une lettre minuscule. La valeur
 0 indiquera qu'il ne s'agit pas d'une lettre minuscule.
 
-ROUGE
+JAUNE
   ***************************************************************************************
   *					Exemple de code                                 *
   *                                                                                     *
@@ -556,7 +557,7 @@ La valeur de retour doit être interprétée en tant que valeur booléenne. Une 
 positive non nulle signifira qu'il s'agit bien d'un caractère pouvant s'afficher visuellement.
 La valeur 0 indiquera qu'il ne s'agit pas d'un caractère pouvant s'afficher.
 
-ROUGE
+JAUNE
   ******************************************************************************************
   *					Exemple de code                                    *
   *                                                                                        *
@@ -614,7 +615,7 @@ La valeur de retour doit être interprétée en tant que valeur booléenne. Une 
 non nulle signifira qu'il s'agit bien d'un caractère ASCII de ponctuation. La valeur 0 indiquera
 qu'il ne s'agit pas d'un caractère ASCII de ponctuation.
 
-ROUGE
+JAUNE
   *******************************************************************************************************
   *					Exemple de code                                                 * 
   *                                                                                                     *
@@ -669,7 +670,7 @@ BLANC
 La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur positive non
 nulle signifira qu'il s'agit bien d'un caractère d'espacement. La valeur 0 indiquera qu'il ne
 s'agit pas d'un caractère d'espacement.
-ROUGE
+JAUNE
 
   **************************************************************************************
   *					Exemple de code                                *
@@ -718,7 +719,7 @@ BLANC
 La valeur de retour doit être interprétée en tant que valeur booléenne. Une valeur positive
 non nulle signifira cond qu'il s'agit bien d'une lettre majuscule. La valeur 0 indiquera
 qu'il ne s'agit pas d'une lettre majuscule.
-ROUGE
+JAUNE
 
   **************************************************************************************
   *					Exemple de code                                *
@@ -779,7 +780,7 @@ BLANC
 La valeur de retour doit être interprétée en tant que valeur booléenne. une valeur positive
 non nulle signifira qu'il s'agit bien d'un chiffre hexadécimal. La valeur 0 indiquera qu'il
 ne s'agit pas d'un chiffre hexadécimal.
-ROUGE
+JAUNE
 
   ***********************************************************************************
   *					Exemple de code                             *
@@ -841,7 +842,7 @@ Cette fonction retourne le caractère équivalent transformé en minuscule, si l
 passé en paramètre était une majuscule. Si le caractère passé n'était pas une majuscule,
 alors la fonction retourne le caractère inchangé. Le résultat doit bien entendu être considéré
 en tant que unsigned char, néanmoins la fonction peut -1 si EOF a été fournit en paramètre.
-ROUGE
+JAUNE
 
   ************************************************************************************
   *					Exemple de code                              *
@@ -896,7 +897,7 @@ Cette fonction retourne le caractère équivalent transformé en majuscule, si l
 passé en paramètre était une minuscule. Si le caractère passé n'était pas une minuscule,
 alors la fonction retourne le caractère inchangé. Le résultat doit bien entendu être
 considéré en tant que unsigned char, néanmoins la fonction peut -1 si EOF a été fournit en paramètre.
-ROUGE
+JAUNE
 
 
   ********************************************************************************************
