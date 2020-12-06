@@ -1,6 +1,94 @@
-			PRESENTATION DE LA BIBLIOTHEQUE ctype
+Presentation
+		/////////////////////////////////////////////////////////////////
+		//                                                             //
+		//        Présentation des librairie ctype.h et limit.h        //
+		//                                                             //
+		//                                                             //
+		//                                                             //
+		//                                                             //
+		//  Etudiants: Dosseh David , Godonou Israel et Olou Yann      //
+		//                                                             //
+		/////////////////////////////////////////////////////////////////
+		//                                                             //
+		//                      Licence Informatique                   //
+		/**                         IMSP - UAC                        **/
+		//                                                             //
+		/////////////////////////////////////////////////////////////////			
+FiN
 
-Fonction isalnum
+ctype.h
+
+
+		  ***********   *************  *       *   **********    ***********
+		  *                   *         *     *    *        *    *
+		  *                   *          *   *     *        *    *
+		  *                   *            *       **********    *********
+		  *                   *            *       *             *
+		  *                   *            *       *             *
+		  ***********         *            *       *             ***********
+
+
+
+    Cette librairie propose un ensemble de fonction de traitement de caractères. On peut classifier
+cet ensemble de fonctions en deux catégories : les fonctions de tests, pour savoir si un caractère
+est d'une certaine nature, et les fonctions de transformations, notamment utilent pour les changement
+de casses (minuscules, majuscules).
+
+   Attention : ces fonctions supportent uniquement la table d'encodage ASCII (American Standard
+Coding for Information Interchange). Cette table ne définie que 128 caratcères (de code 0 à 127).
+Ainsi, un caractère « é » (définit dans les standards ISO-8859-1, UTF-8, UTF-16, ...) ne sera pas
+pris en compte : il n'est donc pas un caractère alpha-numérique.
+
+
+     	       	    Les fonctions de tests de caractères
+
+     Ces fonctions sont très facile à identifier : elles sont toutes préfixées de is. Elles renvoient
+ toutes une valeur entière typée int, mais vous devrait interpréter cette valeur en temps que booléen
+ (true / false). Voici la liste des fonctions de cette catégorie. 
+
+       	      ************************************************************************************************************
+              | id  |    Nom   |   Type     | 	      	       	   Description				      |	 Depuis  |
+	      ************************************************************************************************************	 
+	      |	 1  |  isalnum | fonction   |	Vérifie si un caractère est alpha-numérique. 		      |	  C89    |
+	      ************************************************************************************************************  
+	      |  2  |  isalpha | fonction   |	Vérifie si un caractère est alphabétique. 		      |	  C89	 |
+	      ************************************************************************************************************
+      	      |  3  |  isblank | fonction   |	Vérifie si un caractère est blanc ou non. 	 	      |	  C89    |
+	      ************************************************************************************************************  
+	      |  4  |  iscntrl | fonction   |	Vérifie si l'on a à faire à un caractère de contrôle. 	      |	  C89    |
+	      ************************************************************************************************************  
+	      |  5  |  isdigit | fonction   |	Vérifie si un caractère est un chiffre. 		      |	  C89    |
+	      ************************************************************************************************************
+	      |  6  |  isgraph | fonction   |	Vérifie si un caractère posséde une représentation graphique. |	  C89    |
+	      ************************************************************************************************************  
+	      |  7  |  islower | fonction   | 	Vérifie si un caractère est une lettre minuscule. 	      |	  C89    |
+	      ************************************************************************************************************  
+	      |  8  |  isprint | fonction   |	Vérifie si un caractère est affichable (printable) ou non.    |	  C89    |
+              ************************************************************************************************************  
+	      |  9  |  ispunct | fonction   |	Vérifie si l'on a à faire à un caractère de ponctuation.      |	  C89    |
+	      ************************************************************************************************************
+	      | 10  |  isspace | fonction   |  Vérifie si l'on a à faire à un caractère d'espacement. 	      |	  C89    |
+              ************************************************************************************************************ 
+	      | 11  |  isupper | fonction   |	Vérifie si un caractère est une lettre majuscule. 	      |	  C89    |
+	      ************************************************************************************************************  
+	      |  12 |  isxdigit| fonction   |	Vérifie si un caractère est un chiffre hexadécimal. 	      |	  C89    |
+	      ************************************************************************************************************
+
+
+
+			Les fonctions de transformations de caractères
+			
+		 ********************************************************************************************************
+		 | id  |  Nom       |	  Type	   |			Description			   |  Depuis    |
+		 ********************************************************************************************************	  
+		 |  13 | tolower    |	fonction   |	Transforme une lettre majuscule en une minuscule.  |	C89     |
+		 ********************************************************************************************************	
+		 |  14 | toupper    |	fonction   |	Transforme une lettre minuscule en une majuscule.  |	C89     |
+		 ********************************************************************************************************
+FiN
+
+
+isalnum
 
   	 	 int isalnum( int character );
 
@@ -54,7 +142,7 @@ apha-numérique.
 FiN
 
 
-Fonction isalpha
+isalpha
 
 	 int isalpha( int character );
 
@@ -107,7 +195,7 @@ positive non nulle signifira qu'il s'agit bien d'un caractère alphabétique. La
 FiN
 
 
-Fonction isblank
+isblank
 
 	 int isblank( int character );
 
@@ -147,7 +235,7 @@ indiquera qu'il ne s'agit pas d'un caractère blanc.
 FiN
 
 
-Fonction iscntrl
+iscntrl
 
 	 int iscntrl( int character );
 
@@ -208,7 +296,7 @@ La valeur 0 indiquera qu'il ne s'agit pas d'un caractère de contrôle.
 FiN
 
 
-Fonction isdigit
+isdigit
 
 	 int isdigit( int character );
 
@@ -256,7 +344,7 @@ indiquera qu'il ne s'agit pas d'un chiffre décimal.
 FiN
 
 
-Fonction isgraph
+isgraph
 
 	 int isgraph( int character );
 
@@ -305,7 +393,7 @@ graphique. La valeur 0 indiquera qu'il ne s'agit pas d'un caractère ayant une r
 FiN
 
 
-Fonction islower
+islower
 
 	 int islower( int character );
 
@@ -361,7 +449,7 @@ bit (255 - 32 = 223) : si l'on a une lettre minuscule, on passera donc bien à u
 FiN
 
 
-Fonction isprint
+isprint
 
 	 int isprint( int character );
 
@@ -410,7 +498,7 @@ La valeur 0 indiquera qu'il ne s'agit pas d'un caractère pouvant s'afficher.
 FiN
 
 
-Fonction ispunct
+ispunct
 
 	 int ispunct( int character );
 
@@ -460,7 +548,7 @@ qu'il ne s'agit pas d'un caractère ASCII de ponctuation.
 FiN
 
 
-Fonction isspace
+isspace
 
 	 int isspace( int character );
 
@@ -501,7 +589,7 @@ s'agit pas d'un caractère d'espacement.
 FiN
 
 
-Fonction isupper
+isupper
 
 	 int isupper( int character );
 
@@ -559,7 +647,7 @@ bit : si l'on a une lettre majuscule, on passera donc bien à une lettre minuscu
 FiN
 
 
-Fonction isxdigit
+isxdigit
 
 	 int isxdigit( int character );
 
@@ -612,7 +700,7 @@ ne s'agit pas d'un chiffre hexadécimal.
  FiN
 
 
-Fonction tolower
+tolower
 
 	 int tolower( int character );
 
@@ -656,10 +744,10 @@ en tant que unsigned char, néanmoins la fonction peut -1 si EOF a été fournit
   *	}                                                                            *
   *                                                                                  *
   ************************************************************************************
- FiN
+FiN
 
 
-Fonction toupper
+toupper
 
 	 int toupper( int character );
 

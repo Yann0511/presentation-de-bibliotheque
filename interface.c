@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-#include "biblio.h"
-
+#include <stdlib.h>
+#include "lib.h"
 
 
 void init_chaine(char *chaine)
@@ -12,28 +12,27 @@ void init_chaine(char *chaine)
 	chaine[i] = '\0' ;
 }
 
+
+
 int compare(char *tab1 , char *tab2 , int nb)
 {
     int i ;
 
     for(i = 0 ; i < nb ; i++)
-    {
-	if(tab1[i] > tab2[i])
-	    return 1;
-
-	else if(tab1[i] < tab2[i])
-	    return -1 ;
-
-	else
-	    if(i == nb-1)
-		return 0 ;
-    }
+	if(tab1[i] > tab2[i] || tab1[i] < tab2[i] )
+	    return 1 ;
+    if( i > 0 )
+	if(tab1[i-1] == tab2[i-1])
+	    return 0 ;
+    else
+	return 1 ;
+	    
 }
 
 
 void search(FILE *fichier , char *fonction)
 {
-    int i , controle = 0 ;
+    int i ;
     char chaine[TAILLE_MAX] ;
 
     rewind(fichier);
@@ -44,14 +43,8 @@ void search(FILE *fichier , char *fonction)
 	fgets(chaine , TAILLE_MAX - 2 , fichier) ;
 
 	if(!compare(chaine , fonction , strlen(fonction)))
-	{
-	    controle = 1 ;
 	    break ;
-	}
     }
-
-    if(!controle)
-	printf("\n La fonction n'st pas dans le fichier") ;
 
 }
 
@@ -76,18 +69,99 @@ void print(FILE *fichier , char *fonction)
 }
 
 
-int main()
+int presentation_lib(char *tab , FILE *fichier)
 {
-    FILE *fichier = NULL ;
-    char fonction[30] = "Fonction isalpha" ;
+    char *fonc = NULL ;
+    
+    if(!compare(tab , "ctype.h\n" , strlen(tab)))
+    {
+	print(fichier , "ctype.h\n");
+	fonc = malloc(sizeof(char)*20) ;
 
-    fichier = fopen("ctype.txt" , "r") ;
+	do
+	{
+	    printf("\n\n\t Fonction a presenter ( c pour changer de librairie et q pour quitter) : ") ;
+  
+	    fgets(fonc , 18 , stdin) ;
+		    
+	    presentation_fonctype(fonc , fichier) ;
+	}while(compare(fonc , "c\n" , 2) && compare(fonc , "q\n" , 2)) ;
 
-    if(fichier != NULL)
-	print(fichier , fonction) ;
+	if(!compare(fonc , "c\n" , 2))
+	{
+	    free(fonc) ;
+	    return 1 ;
+	}
+	
+	else
+	{
+	    free(fonc) ;
+	    return 2 ;
+	}
+    }
 
-    fclose(fichier) ;
+    else if(!compare(tab , "q\n" , 2))
+	return 2 ;
+    else
+    {
+	printf("\n\n\t Cette librairie n'est pas dans la documentation") ;
+	return 1 ;
+    }
+}
 
-    return 0 ;
 
+void presentation_fonctype(char *tab , FILE *fichier)
+{
+    
+    if(!compare(tab , "isalnum\n", strlen(tab)))
+	print(fichier , "isalnum\n") ;
+
+    else if(!compare(tab , "isalpaha\n" , strlen(tab)))
+	print(fichier , "isalpha\n") ;
+
+    else if(!compare(tab , "isblank\n" , strlen(tab)))
+	print(fichier , "isblank\n") ;
+
+    else if(!compare(tab , "iscntrl\n" , strlen(tab)))
+	print(fichier , "iscntrl\n") ;
+	
+    else if(!compare(tab , "isdigit\n" , strlen(tab)))
+	print(fichier , "isdigit\n") ;
+
+    else if(!compare(tab , "isgraph\n" , strlen(tab)))
+	print(fichier , "isgraph\n") ;
+
+    else if(!compare(tab , "islower\n" , strlen(tab)))
+	print(fichier , "islower\n") ;
+    
+    else if(!compare(tab , "isprint\n" , strlen(tab)))
+	print(fichier , "isprint\n") ;
+
+    else if(!compare(tab , "ispunct\n" , strlen(tab)))
+	print(fichier ,"ispunct\n") ;
+
+    else if(!compare(tab , "isspace\n" , strlen(tab)))
+	print(fichier , "isspace\n") ;
+
+    else if(!compare(tab , "isupper\n" , strlen(tab)))
+	print(fichier , "isupper\n") ;
+
+    else if(!compare(tab , "isxdigit\n" , strlen(tab)))
+	print(fichier , "isxdigit\n") ;
+
+    else if(!compare(tab , "tolower\n" , strlen(tab)))
+	print(fichier , "tolower\n") ;
+
+    else if(!compare(tab , "toupper\n" , strlen(tab)))
+	print(fichier , "toupper\n") ;
+
+    else if(!compare(tab , "c\n" , 2))
+	printf("\n\n\t\t\t\t\t Changement de librairie") ;
+
+    else if(!compare(tab , "q\n" , 2))
+    {
+    }
+	 
+    else
+	printf("\n\n\t Cette fonction n'est pas dans la documentation") ;
 }

@@ -11,6 +11,9 @@ void search(FILE *fichier , char *fonction) ;
 
 void print(FILE *fichier , char *fonction) ;
 
+void presentation_fonctype(char *tab , FILE *fichier) ;
 
+int presentation_lib(char *tab , FILE *fichier) ;
+    
 #endif
 
