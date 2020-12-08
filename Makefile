@@ -11,7 +11,7 @@ OBJ  	=	$(SRC:.c=.o)
 all: 	$(NAME)
 
 $(NAME):	$(OBJ)
-	gcc -o $(NAME) $(SRC) $(CFLAGS) $(HEADERS_DIRS) -g3 -gdwarf-4
+	gcc -o $(NAME) $(SRC) $(CFLAGS) $(HEADERS_DIRS) -g3 -gdwarf-4 -std=c99
 
 temp:
 	find . -name "*[#,~,.o]" -type f -delete

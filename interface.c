@@ -156,46 +156,88 @@ void presentation_fonctype(char *tab , FILE *fichier)
 {
     
     if(!compare(tab , "isalnum\n", strlen(tab)))
+    {
 	print(fichier , "isalnum\n") ;
-
-    else if(!compare(tab , "isalpaha\n" , strlen(tab)))
+	test(ISALNUM) ;
+    }
+	
+    else if(!compare(tab , "isalpha\n" , strlen(tab)))
+    {
 	print(fichier , "isalpha\n") ;
+	test(ISALPHA) ;
+    }
 
     else if(!compare(tab , "isblank\n" , strlen(tab)))
+    {
 	print(fichier , "isblank\n") ;
+	test(ISBLANK) ;
+    }
 
     else if(!compare(tab , "iscntrl\n" , strlen(tab)))
+    {
 	print(fichier , "iscntrl\n") ;
+	test(ISCNTRL) ;
+    }
 	
     else if(!compare(tab , "isdigit\n" , strlen(tab)))
+    {
 	print(fichier , "isdigit\n") ;
+	test(ISDIGIT) ;
+    }
 
     else if(!compare(tab , "isgraph\n" , strlen(tab)))
+    {
 	print(fichier , "isgraph\n") ;
+	test(ISGRAPH) ;
+    }
 
     else if(!compare(tab , "islower\n" , strlen(tab)))
+    {
 	print(fichier , "islower\n") ;
+	test(ISLOWER) ;
+    }
     
     else if(!compare(tab , "isprint\n" , strlen(tab)))
+    {
 	print(fichier , "isprint\n") ;
+	test(ISPRINT) ;
+    }
 
     else if(!compare(tab , "ispunct\n" , strlen(tab)))
+    {
 	print(fichier ,"ispunct\n") ;
+	test(ISPUNCT) ;
+    }
 
     else if(!compare(tab , "isspace\n" , strlen(tab)))
+    {
 	print(fichier , "isspace\n") ;
+	test(ISSPACE) ;
+    }
 
     else if(!compare(tab , "isupper\n" , strlen(tab)))
+    {
 	print(fichier , "isupper\n") ;
+	test(ISUPPER) ;
+    }
 
     else if(!compare(tab , "isxdigit\n" , strlen(tab)))
+    {
 	print(fichier , "isxdigit\n") ;
+	test(ISXDIGIT) ;
+    }
 
     else if(!compare(tab , "tolower\n" , strlen(tab)))
+    {
 	print(fichier , "tolower\n") ;
+	test(TOLOWER) ;
+    }
 
     else if(!compare(tab , "toupper\n" , strlen(tab)))
+    {
 	print(fichier , "toupper\n") ;
+	test(TOUPPER) ;
+    }
 
     else if(!compare(tab , "c\n" , 2))
 	printf("\n\n\t\t\t\t\t Changement de librairie") ;
@@ -207,3 +249,88 @@ void presentation_fonctype(char *tab , FILE *fichier)
     else
 	printf("\n\n\t Cette fonction n'est pas dans la documentation") ;
 }
+
+
+void test(int id)
+{
+    char choix[3] ;
+
+    printf("\033[7m" );
+    printf("\n\n\t Voulez vous tester la fonction (y/n) : ") ;
+    printf("\033[0m" );
+    fgets(choix , 3 , stdin) ;
+    
+
+    while( choix[0] != 'n' && choix[0] != 'N')
+    {
+	switch (id)
+	{
+	case ISALNUM :
+	    test_isalnum() ;
+	    break ;
+
+	case ISALPHA :
+	    test_isalpha() ;
+	    break ;
+
+	case ISBLANK :
+	    test_isblank ;
+	    break ;
+
+	case ISCNTRL :
+	    test_iscntrl ;
+	    break ;
+
+	case ISDIGIT :
+	    test_isdigit ;
+	    break ;
+
+	case ISGRAPH :
+	    test_isgraph ;
+	    break ;
+
+	case ISLOWER :
+	    test_islower ;
+	    break ;
+
+	case ISPRINT :
+	    test_isprint() ;
+	    break ;
+
+	case ISPUNCT :
+	    test_ispunct() ;
+	    break ;
+
+	case ISSPACE :
+	    test_isspace() ;
+	    break ;
+
+	case ISUPPER :
+	    test_isupper() ;
+	    break ;
+
+	case ISXDIGIT :
+	    test_isxdigit() ;
+	    break ;
+
+	case TOLOWER :
+	    test_tolower() ;
+	    break ;
+
+	case TOUPPER :
+	    test_toupper() ;
+	    break ;
+
+	default :
+	    break ;
+	}
+
+	printf("\033[7m" );
+	printf("\n\n\t Voulez vous retester la fonction (y/n) : ") ;
+	printf("\033[0m" );
+	fgets(choix , 3 , stdin) ;
+	
+
+    }
+}
+       
