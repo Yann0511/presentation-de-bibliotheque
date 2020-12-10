@@ -16,6 +16,7 @@
 #define ISXDIGIT 12
 #define TOLOWER 13
 #define TOUPPER 14
+#define LIMIT 15
 
 #include <assert.h>
 

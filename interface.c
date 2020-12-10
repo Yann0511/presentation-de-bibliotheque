@@ -95,7 +95,7 @@ void print(FILE *fichier , char *fonction)
 
     search(fichier , fonction) ;
     
-    while(compare(chaine , fin , 3))
+    while(compare(chaine , fin , 3) && !feof(fichier))
     {
 	init_chaine(chaine) ;
 	fgets(chaine , TAILLE_MAX - 2 , fichier) ;
@@ -140,6 +140,13 @@ int presentation_lib(char *tab , FILE *fichier)
 	    free(fonc) ;
 	    return 2 ;
 	}
+    }
+
+    else if(!compare(tab , "limit.h\n" , 8))
+    {
+	print(fichier , "limit.h\n");
+	test(LIMIT) ;
+	return 1 ;
     }
 
     else if(!compare(tab , "q\n" , 2))
