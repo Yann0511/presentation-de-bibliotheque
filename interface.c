@@ -281,23 +281,23 @@ void test(int id)
 	    break ;
 
 	case ISBLANK :
-	    test_isblank ;
+	    test_isblank() ;
 	    break ;
 
 	case ISCNTRL :
-	    test_iscntrl ;
+	    test_iscntrl() ;
 	    break ;
 
 	case ISDIGIT :
-	    test_isdigit ;
+	    test_isdigit() ;
 	    break ;
 
 	case ISGRAPH :
-	    test_isgraph ;
+	    test_isgraph() ;
 	    break ;
 
 	case ISLOWER :
-	    test_islower ;
+	    test_islower() ;
 	    break ;
 
 	case ISPRINT :
