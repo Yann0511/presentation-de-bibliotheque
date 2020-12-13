@@ -9,7 +9,7 @@ int main()
     FILE *fichier = NULL ;
     char *lib = NULL ;
 
-    fichier = fopen("ctype.txt" , "r") ;
+    fichier = fopen("lib.txt" , "r") ;
     
     if(fichier != NULL )
     {
@@ -31,6 +31,8 @@ int main()
     }
     
     fclose(fichier) ;
+
+    printf("\n Lien github du dépot : https://github.com/Yann0511/presentation-de-bibliotheque.git \n") ;
 
     return 0 ;
 }

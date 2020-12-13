@@ -1,4 +1,5 @@
 #include <ctype.h>
+#include <limits.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -279,5 +280,35 @@ void test_toupper() {
     char result[17];
 
     printf( "Result: %s\n", strtoupper( result, input ) );
+
+}
+
+
+void test_limits()
+{
+
+    printf("Le nombre de bits dans un byte est %d \n \n ", CHAR_BIT);
+
+    printf("La valeur minimale d'un char signe est : SIGNED CHAR = %d \n\n ", SCHAR_MIN);
+
+    printf("La valeur maximale d'un char signe est : SIGNED CHAR = %d \n \n", SCHAR_MAX);
+
+    printf("La valeur maximale d'un char non signe est : UNSIGNED CHAR = %d \n\n ", UCHAR_MAX);
+
+    printf("La valeur minimale d'un short int est : SHORT INT = %d \n \n ", SHRT_MIN);
+
+    printf("La valeur maximale d'un short int est : SHORT INT = %d \n \n", SHRT_MAX);
+
+    printf("La valeur minimale d'un int est : INT = %d \n \n", INT_MIN);
+
+    printf("La valeur maximale d'un int est : INT = %d \n \n", INT_MAX);
+
+    printf("La valeur minimale d'un char est : CHAR = %d \n \n", SCHAR_MIN);
+
+    printf("La valeur  maximale d'un char est : CHAR = %d \n \n", SCHAR_MAX);
+
+    printf("La valeur minimale d'un long est : LONG = %ld \n \n ", LONG_MIN);
+
+    printf("La valeur maximale d'un long est : LONG = %ld \n \n", LONG_MAX);
 
 }

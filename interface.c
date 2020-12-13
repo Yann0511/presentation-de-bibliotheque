@@ -142,10 +142,10 @@ int presentation_lib(char *tab , FILE *fichier)
 	}
     }
 
-    else if(!compare(tab , "limit.h\n" , 8))
+    else if(!compare(tab , "limits.h\n" , 8))
     {
-	print(fichier , "limit.h\n");
-	test(LIMIT) ;
+	print(fichier , "limits.h\n");
+	test(LIMITS) ;
 	return 1 ;
     }
 
@@ -326,6 +326,10 @@ void test(int id)
 
 	case TOUPPER :
 	    test_toupper() ;
+	    break ;
+
+	case LIMITS :
+	    test_limits() ;
 	    break ;
 
 	default :
