@@ -21,7 +21,7 @@
 #include <assert.h>
 
 void init_chaine(char *chaine) ;
-
+ void test_limits();
 int compare(char *tab1 , char *tab2 , int nb) ;
 
 void search(FILE *fichier , char *fonction) ;

@@ -14,7 +14,7 @@ void test_isalnum()
     bool isCorrect = true;
     size_t length ;
     
-    printf( "Enter your login (only alpha-numeric characters) : " );
+    printf( "Entre ton login (juste pour les caractères alpha-numériques) : " );
     scanf( "%[^\n]", buffer );
     getchar() ; 
 
@@ -26,10 +26,10 @@ void test_isalnum()
     }
 
     if ( isCorrect )
-        printf( "Your login is correct\n" );
+        printf( "Ton login est correct\n" );
 
     else
-        printf( "Your login is not correct\n" );
+        printf( "Ton login n'est pas correct\n" );
 
 }
 
@@ -41,7 +41,7 @@ void  test_isalpha()
     bool isCorrect = true;
     size_t length ;
 
-    printf( "Enter your last name : " );
+    printf( "Entre ton nom : " );
     scanf( "%[^\n]", buffer );
     getchar() ; 
     
@@ -51,10 +51,10 @@ void  test_isalpha()
             isCorrect = false;
 
     if ( isCorrect )
-        printf( "Your last name (%s) is correct\n", buffer );
+        printf( "Ton nom (%s) est correct\n", buffer );
 
     else
-        printf( "Your last name (%s) is not correct\n", buffer );
+        printf( "Ton nom  (%s)  n'est pas correct\n", buffer );
 
 }
 
@@ -65,6 +65,7 @@ void test_isblank()
     printf( "%d\n", isblank( ' ' ) );
     printf( "%d\n", isblank( '\t' ) );
     printf( "%d\n", isblank( '\n' ) );
+    printf("%d\n", isblank('\0'));
     
 }
 
@@ -106,8 +107,8 @@ void test_isdigit()
     bool isCorrect = true;
     size_t length ;
     
-    printf( "Enter your text : " );
-    scanf( "%[^\n]", buffer );
+    printf( "Entre ton texte : " );
+    scanf( "%s", buffer );
     getchar() ; 
     
     length = strlen( buffer );
@@ -116,10 +117,10 @@ void test_isdigit()
             isCorrect = false;
 
     if ( isCorrect )
-        printf( "Your text (%s) is a number\n", buffer );
+        printf( "Ton texte (%s) est un nombre\n", buffer );
 
     else
-        printf( "Your text (%s) is not a number\n", buffer );
+        printf( "Ton texte (%s) n'est pas un nombre\n", buffer );
     
 }
 
@@ -150,8 +151,8 @@ void test_islower()
     char buffer[80];
     size_t length ;
     
-    printf( "Enter your last name : " );
-    scanf( "%[^\n]", buffer );
+    printf( "Entre ton nom : " );
+    scanf( "%s", buffer );
     getchar() ; 
     
     length = strlen( buffer ) ;
@@ -160,7 +161,7 @@ void test_islower()
         if ( islower( buffer[i] ) )
             buffer[i] &= 223;  // equivalent à un appel à toupper
 
-    printf( "Hello %s\n", buffer );
+    printf( "Salut %s\n", buffer );
 
 }
 
@@ -212,7 +213,7 @@ void test_isupper(){
 
     char buffer[80];
     size_t length;
-    printf( "Enter your last name : " );
+    printf( "Entre  ton  nom : " );
     scanf( "%[^\n]", buffer );
     getchar() ; 
     
@@ -223,7 +224,7 @@ void test_isupper(){
        }
 
 
-   printf( "Hello %s\n", buffer );
+   printf( "Salut %s\n", buffer );
 }
 
 
@@ -233,8 +234,8 @@ void test_isxdigit(){
     bool isCorrect = true;
     size_t length;
 
-    printf( "Enter a hexadecimal value : " );
-    scanf( "%[^\n]", buffer );
+    printf( "Entre une valeur hexadecimale : " );
+    scanf( "%s", buffer );
     getchar() ; 
 
     length = strlen( buffer );
@@ -243,12 +244,12 @@ void test_isxdigit(){
             isCorrect = false;
 
     if ( isCorrect ) {
-        printf( "Your text (%s) is a hexadecimal number\n", buffer );
+        printf( "Ton texte (%s) n'est pas une valeur hexadecimale \n", buffer );
         unsigned long value = strtoul( buffer, 0, 16 );
-        printf( "The corresponding decimal value is %zu\n", value );
+        printf( "La valeur décimale correspondante est  %zu\n", value );
     }
     else
-        printf( "Your text (%s) is not a hexadecimal number\n", buffer );
+        printf( "Ton texte (%s) n'est pas  un nombre hexadecimal \n", buffer );
 
 }
 
@@ -264,7 +265,7 @@ void test_tolower(){
     char * input = "Diego De La Vega";
     char result[17];
 
-    printf( "Result: %s\n", strtolower( result, input ) );
+    printf( "Resultat: %s\n", strtolower( result, input ) );
 }
 
 
@@ -279,7 +280,7 @@ void test_toupper() {
     char * input = "Diego De La Vega";
     char result[17];
 
-    printf( "Result: %s\n", strtoupper( result, input ) );
+    printf( "Resultat : %s\n", strtoupper( result, input ) );
 
 }
 
