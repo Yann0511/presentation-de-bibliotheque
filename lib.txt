@@ -3,7 +3,7 @@ VERT
 
 				/////////////////////////////////////////////////////////////////
 				//                                                             //
-				//        Présentation des librairies ctype.h et limit.h       //
+				//        Présentation des librairies ctype.h et limits.h      //
 				//                                                             //
 				//                                                             //
 				//                                                             //

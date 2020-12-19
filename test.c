@@ -244,7 +244,7 @@ void test_isxdigit(){
             isCorrect = false;
 
     if ( isCorrect ) {
-        printf( "Ton texte (%s) n'est pas une valeur hexadecimale \n", buffer );
+        printf( "Ton texte (%s) est une valeur hexadecimale \n", buffer );
         unsigned long value = strtoul( buffer, 0, 16 );
         printf( "La valeur décimale correspondante est  %zu\n", value );
     }
